@@ -7,7 +7,7 @@ An opinionated generator for Swagger based Rest API servers
 | Branch | Status | Coverage | Notes |
 | ------ | ------ | -------- | - |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/develop) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Latest stable release |
+| `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) [![Greenkeeper badge](https://badges.greenkeeper.io/davesag/microservice-generator.svg)](https://greenkeeper.io/) | Latest stable release |
 
 ## Prerequisites
 
