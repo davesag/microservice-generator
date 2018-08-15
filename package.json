@@ -10,8 +10,8 @@
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "prettier": "prettier --single-quote --no-semi --write '**/*.{js,json}'",
-    "test": "find ./test/unit -name '*spec.js' | NODE_ENV=test xargs mocha --require ./test/unit/test_helper.js",
-    "test:coverage": "find ./test/unit -name '*spec.js' | NODE_ENV=test xargs nyc mocha --require ./test/unit/test_helper.js"
+    "test": "find ./test/unit -name '*spec.js' | NODE_ENV=test NODE_PATH=. xargs mocha --require ./test/unit/test_helper.js",
+    "test:coverage": "find ./test/unit -name '*spec.js' | NODE_ENV=test NODE_PATH=. xargs nyc mocha --require ./test/unit/test_helper.js"
   },
   "repository": {
     "type": "git",
@@ -59,7 +59,9 @@
     "include": [
       "src/**/*.js"
     ],
-    "exclude": [],
+    "exclude": [
+      "src/index.js"
+    ],
     "reporter": [
       "lcov",
       "text"
@@ -88,5 +90,10 @@
     "proxyquire": "^2.0.0",
     "sinon": "^6.1.4",
     "sinon-chai": "^3.1.0"
+  },
+  "dependencies": {
+    "commander": "^2.17.1",
+    "traverse-folders": "^1.0.0",
+    "yamljs": "^0.3.0"
   }
 }
