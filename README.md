@@ -15,15 +15,13 @@ An opinionated generator for Swagger based Rest API servers
 
 This library assumes:
 
-1. You are using NodeJS 10.9+
+1. You are using NodeJS 10.15.1+
 
 ## Install
 
-Add `microservice-generator` globally:
+**Note**: This project is currently in development and _not_ ready to be installed.
 
-    npm i -g microservice-generator
-
-## Run
+## Run (_proposed command-line interface_)
 
     ms-new path/to/api.yml [--gateway --output path/to/output/dir]
 
@@ -225,7 +223,7 @@ You may add environment variables to your local `.env` file
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 10.9+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+* [NodeJS](htps://nodejs.org), version 10.15.1+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 * [Docker](https://www.docker.com) (if on a Mac then use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation

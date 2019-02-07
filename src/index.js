@@ -1,6 +1,6 @@
 const program = require('commander')
 const path = require('path')
-const fs = require('fs')
+// const fs = require('fs')
 
 const readSwagger = require('src/readSwagger')
 const extract = require('src/extractFromSwagger')

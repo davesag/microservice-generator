@@ -1,7 +1,4 @@
-const path = require('path')
 const traverse = require('traverse-folders')
-
-const pathSeparator = new RegExp(path.sep, 'g')
 
 const templates = {}
 
