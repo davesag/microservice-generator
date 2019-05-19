@@ -17,8 +17,10 @@
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "prettier": "prettier --single-quote --no-semi --write '**/*.{js,json}'",
-    "test": "find ./test/unit -name '*spec.js' | NODE_ENV=test NODE_PATH=. xargs mocha --require ./test/unit/test_helper.js",
-    "test:coverage": "find ./test/unit -name '*spec.js' | NODE_ENV=test NODE_PATH=. xargs nyc mocha --require ./test/unit/test_helper.js"
+    "test": "npm run test:unit",
+    "test:unit": "NODE_ENV=test NODE_PATH=. mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
+    "test:unit:cov": "NODE_ENV=test NODE_PATH=. nyc mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
+    "test:mutants": "NODE_ENV=test NODE_PATH=. npx stryker run"
   },
   "repository": {
     "type": "git",
@@ -77,6 +79,10 @@
     "cache": true
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^2.0.0",
+    "@stryker-mutator/javascript-mutator": "^2.0.0",
+    "@stryker-mutator/mocha-framework": "^2.0.0",
+    "@stryker-mutator/mocha-runner": "^2.0.0",
     "ajv": "^6.10.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
