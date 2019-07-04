@@ -6,8 +6,9 @@ An opinionated generator for Swagger based Rest API servers
 
 ## Branches
 
-| Branch | Status | Coverage | Notes |
-| ------ | ------ | -------- | - |
+<!-- prettier-ignore -->
+| Branch | Tests | Code Coverage | Comments |
+| ------ | ----- | ------------- | -------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/develop) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Work in progress |
 | `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Latest stable release |
 
@@ -15,7 +16,7 @@ An opinionated generator for Swagger based Rest API servers
 
 This library assumes:
 
-1. You are using NodeJS 10.15.1+
+1. You are using NodeJS 10.16.0+
 
 ## Install
 
@@ -29,154 +30,154 @@ This will read your swagger formatted api.yml file and do the following
 
 1. Generate boilerplate
 
-    * `package.json` file,
-    * various dotfiles,
-    * a `CONTRIBUTING.md` file,
-    * a `README.md` file
-    * a `.circleci/config.yml` file
-    * a `src` folder as described below,
-    * a `test` folder as described below
+   - `package.json` file,
+   - various dotfiles,
+   - a `CONTRIBUTING.md` file,
+   - a `README.md` file
+   - a `.circleci/config.yml` file
+   - a `src` folder as described below,
+   - a `test` folder as described below
 
 2. Generate Project source
 
-    ```
-    src/
-      api/
-        index.js
-        ping.js
-        versions.js
-      events/
-        registerService.js
-      models/
-        index.js
-      serialisers/
-      utils/
-        apiValidator.js
-        appMaker.js
-        config.js
-        genericErrors.js
-        handleMigrationError.js
-        logger.js
-        makeUri.js
-        messageMaker.js
-        uptime.js
-      errors.js
-      exchange.js
-      index.js
-      server.js
-      service.js
-    ```
+   ```
+   src/
+     api/
+       index.js
+       ping.js
+       versions.js
+     events/
+       registerService.js
+     models/
+       index.js
+     serialisers/
+     utils/
+       apiValidator.js
+       appMaker.js
+       config.js
+       genericErrors.js
+       handleMigrationError.js
+       logger.js
+       makeUri.js
+       messageMaker.js
+       uptime.js
+     errors.js
+     exchange.js
+     index.js
+     server.js
+     service.js
+   ```
 
 3. Generate Tests
 
-    ```
-    test/
-      db/
-        models/
-        _.spec.js
-        test_helper.js
-      server/
-        routes/
-        _.spec.js
-        test_helper.js
-      unit/
-        api/
-        events/
-        models/
-        serialisers/
-        utils/
-          apiValidator.spec.js
-          appMaker.spec.js
-          genericErrors.spec.js
-          handleMigrationError.spec.js
-          makeUri.spec.js
-          messageMaker.spec.js
-          uptime.spec.js
-        server.spec.js
-        service.spec.js
-        test_helper.js
-        utils/
-          data/
-            index.js
-          eventTest.js
-          mockApi.js
-          mockLogger.js
-          mockSerialiser.js
-          mockService.js
-      .eslintrc.js
-    ```
+   ```
+   test/
+     db/
+       models/
+       _.spec.js
+       test_helper.js
+     server/
+       routes/
+       _.spec.js
+       test_helper.js
+     unit/
+       api/
+       events/
+       models/
+       serialisers/
+       utils/
+         apiValidator.spec.js
+         appMaker.spec.js
+         genericErrors.spec.js
+         handleMigrationError.spec.js
+         makeUri.spec.js
+         messageMaker.spec.js
+         uptime.spec.js
+       server.spec.js
+       service.spec.js
+       test_helper.js
+       utils/
+         data/
+           index.js
+         eventTest.js
+         mockApi.js
+         mockLogger.js
+         mockSerialiser.js
+         mockService.js
+     .eslintrc.js
+   ```
 
 4. Generate supporting files and dotfiles
 
-    ```
-    config/
-      db_config.yml
-    migrations/
-    tasks/
-      generateERD/
-        index.js
-      initDb/
-        index.js
-      migrationConfig.js
-    .circleci/
-      config.yml
-    .eslintrc.js
-    .eslintignore
-    .gitignore
-    .prettiergnore
-    .sequelizerc
-    api.yml
-    CONTRIBUTING.md
-    Dockerfile
-    docker-compose.yml
-    index.js
-    Procfile
-    ```
+   ```
+   config/
+     db_config.yml
+   migrations/
+   tasks/
+     generateERD/
+       index.js
+     initDb/
+       index.js
+     migrationConfig.js
+   .circleci/
+     config.yml
+   .eslintrc.js
+   .eslintignore
+   .gitignore
+   .prettiergnore
+   .sequelizerc
+   api.yml
+   CONTRIBUTING.md
+   Dockerfile
+   docker-compose.yml
+   index.js
+   Procfile
+   ```
 
 5. For each path extract the `path` details and the corresponding `operationId` and generate the following
 
-    ```
-    src/api/{basename}/
-      {operationId}.js // folder paths are generated as required
-    test/unit/api/{basename}
-      {operationId}.spec.js
-    test/server/routes/{basename}
-      {operationId}.spec.js
-    ```
+   ```
+   src/api/{basename}/
+     {operationId}.js // folder paths are generated as required
+   test/unit/api/{basename}
+     {operationId}.spec.js
+   test/server/routes/{basename}
+     {operationId}.spec.js
+   ```
 
 6. For each definition in the `definitions` section
 
-    ```
-    migrations/
-      {timestamp}-create-{plural(definition)}.js
-    src/models/
-      {definition}.js
-    test/unit/models/
-      {definition}.spec.js
-    test/db/models/
-      {definition}.spec.js
-    test/utils/data/
-    {definition}Data.js
-      make{operationId}.js
-    ```
+   ```
+   migrations/
+     {timestamp}-create-{plural(definition)}.js
+   src/models/
+     {definition}.js
+   test/unit/models/
+     {definition}.spec.js
+   test/db/models/
+     {definition}.spec.js
+   test/utils/data/
+   {definition}Data.js
+     make{operationId}.js
+   ```
 
-Once these files have been generated, you can then start filling in whatever implementation details you wish.  Where possible the generator will fill in complete code. Where not possible it will generate working stubs and some documentation to get you going.
+Once these files have been generated, you can then start filling in whatever implementation details you wish. Where possible the generator will fill in complete code. Where not possible it will generate working stubs and some documentation to get you going.
 
 ### Parameters and Options
 
 `ms-new` takes the following parameters
 
-* The path to a swagger YAML file.
-* `--gateway` Tells the generator you are generating an api gateway, not an underlying service.
-* `--output path/to/output/dir` Tells the generator which folder to write files to.  Note that folder must be empty apart from the following files or directories which will be ignored.
+- The path to a swagger YAML file.
+- `--gateway` Tells the generator you are generating an api gateway, not an underlying service.
+- `--output path/to/output/dir` Tells the generator which folder to write files to. Note that folder must be empty apart from the following files or directories which will be ignored.
 
-    ```
-    .git/
-    .gitignore
-    LICENCE
-    README.md
-    {api.yml} // whatever name you specified when you invoked the generator
-    ```
+  ```
+  .git/
+  .gitignore
+  LICENCE
+  README.md
+  {api.yml} // whatever name you specified when you invoked the generator
+  ```
 
 ## Once you have generated a server
 
@@ -205,7 +206,7 @@ Overwrite the generated tests and source models to suit your own needs.
 
 ### Route Controllers
 
-The default route controller will be an async function that includes code to read any of the params defined, and to emit the relevant errors or response.  The specifics of how the response is generated are left to you.
+The default route controller will be an async function that includes code to read any of the params defined, and to emit the relevant errors or response. The specifics of how the response is generated are left to you.
 
 Controllers for the `ping` and `versions` root level functions common to all servers are installed along with their corresponding unit and integration tests.
 
@@ -223,8 +224,8 @@ You may add environment variables to your local `.env` file
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 10.15.1+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
-* [Docker](https://www.docker.com) (if on a Mac then use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
+- [NodeJS](htps://nodejs.org), version 10.15.1+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [Docker](https://www.docker.com) (if on a Mac then use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation
 
@@ -246,7 +247,7 @@ then you can
 
 ### Test it
 
-* `npm test` — runs the unit tests (quick)
+- `npm test` — runs the unit tests (quick)
 
 ### Lint it
 
