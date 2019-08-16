@@ -98,7 +98,7 @@
     "sinon-chai": "^3.3.0"
   },
   "dependencies": {
-    "commander": "^2.20.0",
+    "commander": "^3.0.0",
     "traverse-folders": "^1.1.0",
     "yamljs": "^0.3.0"
   },
