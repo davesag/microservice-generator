@@ -2,14 +2,25 @@
   "name": "microservice-generator",
   "version": "0.0.1",
   "description": "An opinionated generator for Swagger based Rest API servers",
+  "author": "Dave Sag <davesag@gmail.com>",
+  "type": "commonjs",
+  "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/davesag"
+  },
   "main": "src/index.js",
   "bin": {
     "ms-new": "NODE_PATH=. node src/"
   },
   "files": [
-    "src/**/*.js",
+    "src",
     "CONTRIBUTING.md"
   ],
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
   "engines": {
     "node": ">= 10.15.1"
   },
@@ -24,52 +35,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davesag/microservice-generator.git"
+    "url": "https://github.com/davesag/microservice-generator.git"
   },
-  "author": "Dave Sag <davesag@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/davesag/microservice-generator/issues"
   },
   "homepage": "https://github.com/davesag/microservice-generator#readme",
-  "keywords": [
-    "ampq",
-    "api",
-    "cli",
-    "docker",
-    "generator",
-    "postgres",
-    "rabbitmq",
-    "rest",
-    "sequelize",
-    "swagger",
-    "templates"
-  ],
-  "lint-staged": {
-    "**/*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 100,
-    "statements": 100,
-    "functions": 100,
-    "branches": 100,
-    "include": [
-      "src/**/*.js"
-    ],
-    "exclude": [
-      "src/index.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "all": true,
-    "cache": true
+  "dependencies": {
+    "commander": "^4.0.1",
+    "traverse-folders": "^1.1.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^2.3.0",
@@ -97,19 +72,53 @@
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0"
   },
-  "dependencies": {
-    "commander": "^4.0.1",
-    "traverse-folders": "^1.1.0",
-    "yamljs": "^0.3.0"
-  },
+  "keywords": [
+    "ampq",
+    "api",
+    "cli",
+    "docker",
+    "generator",
+    "postgres",
+    "rabbitmq",
+    "rest",
+    "sequelize",
+    "swagger",
+    "templates"
+  ],
   "prettier": {
     "semi": false,
     "singleQuote": true,
     "proseWrap": "never"
   },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/index.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "all": true,
+    "cache": true
   }
 }
