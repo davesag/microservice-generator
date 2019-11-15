@@ -43,7 +43,7 @@
   "homepage": "https://github.com/davesag/microservice-generator#readme",
   "dependencies": {
     "commander": "^4.0.1",
-    "traverse-folders": "^1.1.0",
+    "traverse-folders": "^1.1.1",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
