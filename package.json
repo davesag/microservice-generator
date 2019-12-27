@@ -25,7 +25,7 @@
     "node": ">= 10.15.1"
   },
   "scripts": {
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check": "eslint --print-config src/index.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "prettier": "prettier --write '**/*.{js,json,md}'",
     "test": "npm run test:unit",
@@ -43,7 +43,7 @@
   "homepage": "https://github.com/davesag/microservice-generator#readme",
   "dependencies": {
     "commander": "^4.0.1",
-    "traverse-folders": "^1.1.1",
+    "traverse-folders": "^1.1.2",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-mocha": "^6.2.2",
