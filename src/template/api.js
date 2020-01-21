@@ -1,14 +1,10 @@
 const wrap = require('../wrap')
 
 const generator = async (_swagger, _swaggerFilePath) => {
-  const repository = undefined
-
   // anything else you want to do with the swagger doc details.
+  const repository = 'davesag/api-server-boilerplate'
   const next = () => {
-    console.log('microservice repository not implemented')
-    // generate boilerplate
-    // generate paths
-    // generate definitions
+    console.log('created api from', repository)
   }
   return { repository, next }
 }

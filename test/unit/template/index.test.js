@@ -7,5 +7,5 @@ describe('src/template/index', () => {
       expect(template[name]).to.be.a('function')
     })
   }
-  ;['gateway', 'microservice'].forEach(doTest)
+  ;['api', 'gateway', 'microservice'].forEach(doTest)
 })
