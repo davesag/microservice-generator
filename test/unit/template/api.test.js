@@ -4,17 +4,17 @@ const { stub, match } = require('sinon')
 
 const mockSwaggerFile = require('test/utils/mockSwaggerFile')
 
-describe('src/template/gateway', () => {
+describe('src/template/api', () => {
   const wrap = stub().callsFake(f => f)
-  const gateway = proxyquire('src/template/gateway', {
+  const api = proxyquire('src/template/api', {
     '../wrap': wrap
   })
-  const repository = undefined
+  const repository = 'davesag/api-server-boilerplate'
 
   let result
 
   before(async () => {
-    result = await gateway(mockSwaggerFile, 'gateway.yml')
+    result = await api(mockSwaggerFile, 'api.yml')
     result.next()
   })
 

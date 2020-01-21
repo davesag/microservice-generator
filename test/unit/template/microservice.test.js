@@ -1,14 +1,29 @@
 const { expect } = require('chai')
-const { microservice } = require('src/template')
+const proxyquire = require('proxyquire')
+const { stub, match } = require('sinon')
 
 const mockSwaggerFile = require('test/utils/mockSwaggerFile')
 
 describe('src/template/microservice', () => {
+  const wrap = stub().callsFake(f => f)
+  const microservice = proxyquire('src/template/microservice', {
+    '../wrap': wrap
+  })
+  const repository = undefined
+
+  let result
+
   before(async () => {
-    await microservice(mockSwaggerFile)
+    result = await microservice(mockSwaggerFile, 'microservice.yml')
+    result.next()
   })
 
-  it('did stuff', () => {
-    expect(true).to.be.true
+  it('called wrap with the correct details', () => {
+    expect(wrap).to.have.been.calledWith(match.func)
+  })
+
+  it('returned the correct result', () => {
+    expect(result).to.have.property('repository', repository)
+    expect(result).to.have.property('next')
   })
 })

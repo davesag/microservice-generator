@@ -1,7 +1,16 @@
-const generator = async ({ info, paths, definitions }) => {
-  // generate boilerplate
-  // generate paths
-  // generte definitions
+const wrap = require('../wrap')
+
+const generator = async (_swagger, _swaggerFilePath) => {
+  const repository = undefined
+
+  // anything else you want to do with the swagger doc details.
+  const next = () => {
+    console.log('gateway repository not implemented')
+    // generate boilerplate
+    // generate paths
+    // generate definitions
+  }
+  return { repository, next }
 }
 
-module.exports = generator
+module.exports = wrap(generator)
