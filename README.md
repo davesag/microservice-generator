@@ -2,21 +2,11 @@
 
 An opinionated generator for Swagger based Rest API servers
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/microservice-generator.svg)](https://greenkeeper.io/)
-
-## Branches
-
-<!-- prettier-ignore -->
-| Branch | Tests | Code Coverage | Comments |
-| ------ | ----- | ------------- | -------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/develop) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | Latest stable release |
-
 ## Prerequisites
 
 This library assumes:
 
-1. You are using NodeJS 12.14.1+
+1. You are using NodeJS 12.18.2+
 
 ## Install
 
@@ -198,7 +188,7 @@ If it's a `gateway` service then it will listen for `heartbeat` events and keep 
 
 It will expose the rest api outlined in the swagger documentation and link those paths to their nominated routes. These routes will simply emit example data.
 
-## Ongoing development
+## Now write some code
 
 ### Models
 
@@ -222,9 +212,17 @@ The default migrations are certain to be lacking some subtlety.
 
 You may add environment variables to your local `.env` file
 
+### Branches
+
+<!-- prettier-ignore -->
+| Branch | Tests | Code Coverage | Audit | Comments |
+| ------ | ----- | ------------- | -------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/develop) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | [![Vulnerabilities](https://snyk.io/test/github/davesag/microservice-generator/develop/badge.svg)](https://snyk.io/test/github/davesag/microservice-generator/develop) | Work in progress |
+| `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | [![Vulnerabilities](https://snyk.io/test/github/davesag/microservice-generator/master/badge.svg)](https://snyk.io/test/github/davesag/microservice-generator/master) | Latest stable release |
+
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 12.14.1+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 12.18.2+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 - [Docker](https://www.docker.com) (if on a Mac then use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation
