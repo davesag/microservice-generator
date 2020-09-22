@@ -9,10 +9,7 @@ const copy = require('./loadPlugin/copy')
 /* istanbul ignore next */
 const returnUndefined = () => undefined
 
-const wrap = template => async (
-  { name, description, version, ..._swagger },
-  swaggerFilePath
-) => {
+const wrap = template => async ({ name, description, version, ..._swagger }, swaggerFilePath) => {
   const buildFolder = path.join(process.cwd(), 'build')
   const rimraf = promisify(rimrafCb)
 

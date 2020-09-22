@@ -5,10 +5,7 @@ const { userInfo } = require('os')
 
 const makeSlug = require('../utils/makeSlug')
 
-const updatePackage = async (
-  buildFolder,
-  { repository, name: rawName, description, version }
-) => {
+const updatePackage = async (buildFolder, { repository, name: rawName, description, version }) => {
   const readFile = promisify(fs.readFile)
   const writeFile = promisify(fs.writeFile)
   const { username } = userInfo()
@@ -20,9 +17,7 @@ const updatePackage = async (
   const regex = new RegExp(`@?${repository}`, 'g')
   const packageString = packageData.toString().replace(regex, name)
 
-  const { funding: _funding, private: _private, ...basePackage } = JSON.parse(
-    packageString
-  )
+  const { funding: _funding, private: _private, ...basePackage } = JSON.parse(packageString)
   const pkg = {
     ...basePackage,
     description,
