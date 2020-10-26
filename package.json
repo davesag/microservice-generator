@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/davesag/microservice-generator#readme",
   "dependencies": {
-    "commander": "^6.1.0",
+    "commander": "^6.2.0",
     "rimraf": "^3.0.2",
     "slugify": "^1.4.5",
     "traverse-folders": "^1.1.2",
