@@ -4,9 +4,7 @@ An opinionated generator for Swagger based Rest API servers
 
 ## Prerequisites
 
-This library assumes:
-
-1. You are using NodeJS 12.18.2+
+This library assumes you are using NodeJS 12.18.2+
 
 ## Install
 
@@ -30,7 +28,7 @@ This will read your swagger formatted api.yml file and do the following
 
 2. Generate Project source
 
-   ```
+   ```text
    src/
      api/
        index.js
@@ -60,7 +58,7 @@ This will read your swagger formatted api.yml file and do the following
 
 3. Generate Tests
 
-   ```
+   ```text
    test/
      db/
        models/
@@ -99,7 +97,7 @@ This will read your swagger formatted api.yml file and do the following
 
 4. Generate supporting files and dotfiles
 
-   ```
+   ```text
    config/
      db_config.yml
    migrations/
@@ -126,7 +124,7 @@ This will read your swagger formatted api.yml file and do the following
 
 5. For each path extract the `path` details and the corresponding `operationId` and generate the following
 
-   ```
+   ```text
    src/api/{basename}/
      {operationId}.js // folder paths are generated as required
    test/unit/api/{basename}
@@ -137,7 +135,7 @@ This will read your swagger formatted api.yml file and do the following
 
 6. For each definition in the `definitions` section
 
-   ```
+   ```text
    migrations/
      {timestamp}-create-{plural(definition)}.js
    src/models/
@@ -161,7 +159,7 @@ Once these files have been generated, you can then start filling in whatever imp
 - `--gateway` Tells the generator you are generating an api gateway, not an underlying service.
 - `--output path/to/output/dir` Tells the generator which folder to write files to. Note that folder must be empty apart from the following files or directories which will be ignored.
 
-  ```
+  ```text
   .git/
   .gitignore
   LICENCE
@@ -173,7 +171,7 @@ Once these files have been generated, you can then start filling in whatever imp
 
 `cd` into your server folder if you need to, then
 
-```
+```sh
 npm install
 npm test
 npm run backend
@@ -222,7 +220,7 @@ You may add environment variables to your local `.env` file
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), 15.1.0+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.) You must use npm version 7.0.8 or better.
+- [NodeJS](htps://nodejs.org). I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.
 - [Docker](https://www.docker.com) (if on a Mac then use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation
