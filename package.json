@@ -22,8 +22,7 @@
     "test": "test"
   },
   "engines": {
-    "node": ">= 12.18.2",
-    "npm": "<7 >=7.0.8"
+    "node": ">= 12.18.2"
   },
   "scripts": {
     "eslint-check": "eslint --print-config src/index.js | eslint-config-prettier-check",
