@@ -216,7 +216,7 @@ You may add environment variables to your local `.env` file
 | Branch | Tests | Code Coverage | Audit | Comments |
 | ------ | ----- | ------------- | ----- | -------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/develop) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | [![Vulnerabilities](https://snyk.io/test/github/davesag/microservice-generator/develop/badge.svg)](https://snyk.io/test/github/davesag/microservice-generator/develop) | Work in progress |
-| `master` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/master) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | [![Vulnerabilities](https://snyk.io/test/github/davesag/microservice-generator/master/badge.svg)](https://snyk.io/test/github/davesag/microservice-generator/master) | Latest stable release |
+| `main` | [![CircleCI](https://circleci.com/gh/davesag/microservice-generator/tree/main.svg?style=svg)](https://circleci.com/gh/davesag/microservice-generator/tree/main) | [![codecov](https://codecov.io/gh/davesag/microservice-generator/branch/main/graph/badge.svg)](https://codecov.io/gh/davesag/microservice-generator) | [![Vulnerabilities](https://snyk.io/test/github/davesag/microservice-generator/main/badge.svg)](https://snyk.io/test/github/davesag/microservice-generator/main) | Latest stable release |
 
 ### Prerequisites
 
