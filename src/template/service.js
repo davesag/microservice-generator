@@ -5,7 +5,7 @@ const generator = async (_swagger, _swaggerFilePath) => {
 
   // anything else you want to do with the swagger doc details.
   const next = () => {
-    console.log('microservice repository not implemented')
+    console.log('service repository not implemented')
     // generate boilerplate
     // generate paths
     // generate definitions

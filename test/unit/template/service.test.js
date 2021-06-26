@@ -4,9 +4,9 @@ const { stub, match } = require('sinon')
 
 const mockSwaggerFile = require('test/utils/mockSwaggerFile')
 
-describe('src/template/microservice', () => {
+describe('src/template/service', () => {
   const wrap = stub().callsFake(f => f)
-  const microservice = proxyquire('src/template/microservice', {
+  const service = proxyquire('src/template/service', {
     '../wrap': wrap
   })
   const repository = undefined
@@ -14,7 +14,7 @@ describe('src/template/microservice', () => {
   let result
 
   before(async () => {
-    result = await microservice(mockSwaggerFile, 'microservice.yml')
+    result = await service(mockSwaggerFile, 'service.yml')
     result.next()
   })
 

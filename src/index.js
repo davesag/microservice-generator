@@ -4,25 +4,24 @@ const path = require('path')
 
 const readSwagger = require('./readSwagger')
 const extract = require('./extractFromSwagger')
-const { gateway, microservice, api } = require('./template')
+const { gateway, service, api } = require('./template')
 
 program
   .option('-f, --file <swaggerFile>', 'The path to the swagger file')
   .option('-o, --output', 'The folder to output the generated service to')
-  .option(
-    '-g, --gateway',
-    'Use this flag if the service is to be a gateway-api not a microservice.'
-  )
+  .option('-g, --gateway', 'Use this flag if the service is to be a gateway-api not a service.')
   .option(
     '-a, --api',
-    'Use this flag if the service is to be a regular api not a microservice or gateway.'
+    'Use this flag if the service is to be a regular api not a service or gateway.'
   )
   .parse(process.argv)
 
-const swaggerFilePath = path.resolve(process.cwd(), program.file || './api.yml')
-const isGateway = program.gateway || false
-const isApi = program.api || false
-const outputPath = path.resolve(process.cwd(), program.output || '.')
+const opts = program.opts()
+
+const swaggerFilePath = path.resolve(process.cwd(), opts.file || './api.yml')
+const isGateway = opts.gateway || false
+const isApi = opts.api || false
+const outputPath = path.resolve(process.cwd(), opts.output || '.')
 
 console.log('swaggerFilePath', swaggerFilePath)
 console.log('outputPath', outputPath)
@@ -30,7 +29,7 @@ console.log('isGateway', isGateway)
 console.log('isApi', isApi)
 
 try {
-  const template = isApi ? api : isGateway ? gateway : microservice
+  const template = isApi ? api : isGateway ? gateway : service
 
   const swagger = readSwagger(swaggerFilePath)
   template(extract(swagger), swaggerFilePath)
