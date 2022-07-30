@@ -63,4 +63,8 @@ typings/
 # the build directory
 /build
 
+# macOS Desktop configuration
 .DS_Store
+
+# VS Code settings
+.vscode
